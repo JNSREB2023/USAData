@@ -91,6 +91,7 @@ See `requirements.txt` for the full list.
 ## Example Workflow
 
 ```python
+#| eval = false
 import usaata
 from usadata.cleaning import USdata
 from usadata.analysis import TTests, regression analysis

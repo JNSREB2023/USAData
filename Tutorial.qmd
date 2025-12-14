@@ -134,6 +134,7 @@ For the analysis functions it is best when used with the polished dataset acquir
 The T-Test function test if there is significant differences between north and south regions of the US as well as east and west regions. The T-Test prints the region, the variable tested, the test statistic, and p-value. 
 
 ```{python}
+#| eval = false
 from usadata import analysis as US
 
 data = US.USdata()
@@ -149,6 +150,7 @@ The regression function takes in the dataset and the desired response variable. 
 **NOTE:** The response variable must be a string input and correspond to a column name in the USdata data. 
 
 ```{python}
+#| eval = false
 from usadata import analysis as US
 
 response = "Avg_PM25"
