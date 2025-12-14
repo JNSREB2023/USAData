@@ -1,6 +1,12 @@
-# final-project-demo
+# USA Data Analytics Final Project Scaffold
 
-Teaching scaffold for STAT 386 final projects. The repository bundles a Python package, Quarto site, automated tests, and a customizable Streamlit prototype.
+The purpose of this project was to demonstrate the ability to create a full data analytics project from start to finish.
+
+This repository is the scaffolding for the python package usadata. It includes:
+- a data cleaning pipeline
+- an analysis pipeline
+- a Streamlit prototype app
+- a Quarto site for documentation and reporting
 
 ## Quick start
 
@@ -9,23 +15,29 @@ uv sync
 uv run pytest
 ```
 
-## Streamlit prototype
+## Streamlit App
 
-- Edit `src/final_project_demo/streamlit_app.py` to point at your own data sources, cleaning logic, and visuals.
-- Launch the toy UI with:
+- Launch the app UI with:
 
 ```bash
 uv run streamlit run src/final_project_demo/streamlit_app.py
 ```
 
-- Use the sidebar toggles to preview how `run_cleaning_pipeling` and `run_analysis_pipeline` outputs appear, then replace them with real charts or KPIs.
+## Testing Package locally
 
-## Quarto site
-
-Rebuild the public site (including the technical report placeholder) with:
+run the following command to install the package in editable mode:
 
 ```bash
-uv run quarto render
+pip install -e .
+``` 
+
+Then you can import the package in your python scripts or notebooks:
+
+```python
+import usadata as uda
+
+# Example usage
+# This will return the USA data as a pandas DataFrame
+data = uda.USData()
 ```
 
-Serve locally via `uv run quarto preview` while authoring docs.
