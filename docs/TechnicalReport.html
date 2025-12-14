@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Project summary, methodology, and findings placeholder">
 
-<title>Documentation – website</title>
+<title>Technical Report – website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -132,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Documentation.html" aria-current="page"> 
+    <a class="nav-link" href="./Documentation.html"> 
 <span class="menu-text">Documentation</span></a>
   </li>  
   <li class="nav-item">
@@ -140,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Tutorial</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./TechnicalReport.html"> 
+    <a class="nav-link active" href="./TechnicalReport.html" aria-current="page"> 
 <span class="menu-text">Technical Report</span></a>
   </li>  
 </ul>
@@ -159,24 +125,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#usadata-package-documentation" id="toc-usadata-package-documentation" class="nav-link active" data-scroll-target="#usadata-package-documentation">USAData Package Documentation</a>
-  <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#package-structure" id="toc-package-structure" class="nav-link" data-scroll-target="#package-structure">Package Structure</a></li>
-  <li><a href="#modules-and-functions" id="toc-modules-and-functions" class="nav-link" data-scroll-target="#modules-and-functions">Modules and Functions</a>
-  <ul class="collapse">
-  <li><a href="#cleaning.py" id="toc-cleaning.py" class="nav-link" data-scroll-target="#cleaning.py"><code>cleaning.py</code></a></li>
-  <li><a href="#analysis.py" id="toc-analysis.py" class="nav-link" data-scroll-target="#analysis.py"><code>analysis.py</code></a></li>
-  <li><a href="#streamlit_app.py" id="toc-streamlit_app.py" class="nav-link" data-scroll-target="#streamlit_app.py"><code>streamlit_app.py</code></a></li>
-  </ul></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#dependencies" id="toc-dependencies" class="nav-link" data-scroll-target="#dependencies">Dependencies</a></li>
-  <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link" data-scroll-target="#example-workflow">Example Workflow</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  <li><a href="#authors" id="toc-authors" class="nav-link" data-scroll-target="#authors">Authors</a></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
-  </ul></li>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link active" data-scroll-target="#executive-summary">Executive Summary</a></li>
+  <li><a href="#project-context" id="toc-project-context" class="nav-link" data-scroll-target="#project-context">Project Context</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#results-diagnostics" id="toc-results-diagnostics" class="nav-link" data-scroll-target="#results-diagnostics">Results &amp; Diagnostics</a></li>
+  <li><a href="#discussion-next-steps" id="toc-discussion-next-steps" class="nav-link" data-scroll-target="#discussion-next-steps">Discussion &amp; Next Steps</a></li>
   </ul>
 </nav>
     </div>
@@ -185,9 +139,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Documentation</h1>
+<h1 class="title">Technical Report</h1>
 </div>
 
+<div>
+  <div class="description">
+    Project summary, methodology, and findings placeholder
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -202,88 +161,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="usadata-package-documentation" class="level1">
-<h1>USAData Package Documentation</h1>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>==USAData== is a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.</p>
-<p>This package provides: - Data cleaning tolls - Data analysis functions - Runnable streamlit app</p>
+<section id="executive-summary" class="level2">
+<h2 class="anchored" data-anchor-id="executive-summary">Executive Summary</h2>
+<p><em>TODO: Provide a concise overview of the project objectives, key findings, and actionable recommendations.</em></p>
 </section>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>You can install the required dependencies using:</p>
-<pre class="{bash}"><code>uv pip install -r requirements.txt</code></pre>
-<p>To install the package locally:</p>
-<pre class="{bash}"><code>uv pip install -e .</code></pre>
+<section id="project-context" class="level2">
+<h2 class="anchored" data-anchor-id="project-context">Project Context</h2>
+<p><em>TODO: Describe the motivation, stakeholders, and success criteria for this analysis.</em></p>
 </section>
-<section id="package-structure" class="level2">
-<h2 class="anchored" data-anchor-id="package-structure">Package Structure</h2>
-<pre class="{text}"><code>USAData/
-├── analysis.py # Data analysis functions
-├── cleaning.py # Data cleaning utilities
-├── streamlit_app.py # Streamlit application
-├── data/ # Included datasets
-└── __init__.py</code></pre>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
+<ul>
+<li><em>Primary dataset:</em> <code>TODO - name and link</code></li>
+<li><em>Supplementary data:</em> <code>TODO - describe any external references</code></li>
+<li><em>Data access notes:</em> <code>TODO - mention licenses or refresh cadence</code></li>
+</ul>
 </section>
-<section id="modules-and-functions" class="level2">
-<h2 class="anchored" data-anchor-id="modules-and-functions">Modules and Functions</h2>
-<section id="cleaning.py" class="level3">
-<h3 class="anchored" data-anchor-id="cleaning.py"><code>cleaning.py</code></h3>
-<p>Contains functions for preparing and cleaning raw datasets. Note there are several functions in this file that use an API to source and piece together the dataset. If the polished dataset is all that is needed use the code below to acquire a dataframe that sources data included in the package.</p>
-<p>Example usage:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata.cleaning <span class="im">import</span> US</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>clean_df <span class="op">=</span> USdata()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<ol type="1">
+<li>Data Acquisition</li>
+</ol>
+<p>We collected data from <a href="https://openaq.org/">OpenAQ</a>, a nonprofit that aggregates and provides open air quality data globally. We accessed this data with an API key and …..</p>
+<p>The second source of data we used was the <a href="https://measureofamerica.org/maps/">Measure of America</a> website. Measure of America is an initiative of the Social Science Research Council in Brooklyn, New York, and it provides information on each state’s demographics, Human Development Index, housing situation, crime, environmental conditions, and more. This data did not need to be scraped; it was downloaded as Excel files, which we then cleaned and combined with our PM2.5 data.</p>
+<ol type="1">
+<li><em>Data acquisition:</em> <code>TODO - outline collection scripts/APIs</code></li>
+<li><em>Cleaning pipeline:</em> <code>TODO - summarize transformations and validations implemented</code></li>
+<li><em>Analysis workflow:</em> <code>TODO - describe statistical or modeling techniques</code></li>
+<li><em>Tooling:</em> <code>TODO - list packages, environments, and reproducibility steps</code></li>
+</ol>
 </section>
-<section id="analysis.py" class="level3">
-<h3 class="anchored" data-anchor-id="analysis.py"><code>analysis.py</code></h3>
-<p>Provides functions for T-Tests and regression analysis.</p>
-<p>Example usage:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata.analysis <span class="im">import</span> TTests</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>TTests(clean_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="results-diagnostics" class="level2">
+<h2 class="anchored" data-anchor-id="results-diagnostics">Results &amp; Diagnostics</h2>
+<p><em>TODO: Summarize the main metrics, charts, or model diagnostics produced. Include links to figures or tables once available.</em></p>
 </section>
-<section id="streamlit_app.py" class="level3">
-<h3 class="anchored" data-anchor-id="streamlit_app.py"><code>streamlit_app.py</code></h3>
-<p>Launches an interactive Streamlit dashboard for visualizing U.S. data.</p>
-<p>To run the app:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">streamlit</span> run streamlit_app.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-</section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The <code>data/</code> directory in the <code>src/usadata</code> directory contains packaged datasets that are accessed internally using <code>importlib.resources</code>. These datasets are used in the functions that use the final polished dataset and also for sourcing some of the states data that requires excel files to merge the data.</p>
-</section>
-<section id="dependencies" class="level2">
-<h2 class="anchored" data-anchor-id="dependencies">Dependencies</h2>
-<p>Key dependencies include: - pandas - streamlit - plotly - us - numpy - scipy - statsmodels - httpx - geopandas - requests</p>
-<p>See <code>requirements.txt</code> for the full list.</p>
-<hr>
-</section>
-<section id="example-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="example-workflow">Example Workflow</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> usaata</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata.cleaning <span class="im">import</span> USdata</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata.analysis <span class="im">import</span> TTests, regression analysis</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>clean_df <span class="op">=</span> USdata()</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>TTests(clean_df)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>regression_analysis(clean_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p>This project is licensed under the MIT License.</p>
-</section>
-<section id="authors" class="level2">
-<h2 class="anchored" data-anchor-id="authors">Authors</h2>
-<p>Created by Rebekah Jensen and Noah Champagne as part of a course project.</p>
-</section>
-<section id="notes" class="level2">
-<h2 class="anchored" data-anchor-id="notes">Notes</h2>
-<p>This package was built using the modern Python packaging standard (<code>pyproject.toml</code>) and <code>uv_build</code>.</p>
+<section id="discussion-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-next-steps">Discussion &amp; Next Steps</h2>
+<p><em>TODO: Interpret the results, note limitations, and capture open questions or future experiments.</em></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

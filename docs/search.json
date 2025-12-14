@@ -4,20 +4,174 @@
     "href": "Tutorial.html",
     "title": "Getting Started",
     "section": "",
-    "text": "Here is how you use my package:\n\nfrom final_project_demo import add\n\nprint(add(2, 19))\n\n21\n\n\n\nfrom final_project_demo import run_analysis_pipeline, run_cleaning_pipeling\n\nrun_cleaning_pipeling()\nrun_analysis_pipeline()\n\nRunning cleaning pipeline...\nRunning analysis pipeline..."
+    "text": "Here is how you use our package:\nThis package two different processes for getting the data. For simplicity purposes the first process is using an API key acquired from OpenAQ. Follow the link to follow the API functions to gather the most current and updated data for average air quality. The second process is a polished dataset that can be used for the analysis functions."
   },
   {
     "objectID": "Documentation.html",
     "href": "Documentation.html",
     "title": "Documentation",
     "section": "",
-    "text": "Functions:"
+    "text": "==USAData== is a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.\nThis package provides: - Data cleaning tolls - Data analysis functions - Runnable streamlit app\n\n\n\nYou can install the required dependencies using:\nuv pip install -r requirements.txt\nTo install the package locally:\nuv pip install -e .\n\n\n\nUSAData/\n├── analysis.py # Data analysis functions\n├── cleaning.py # Data cleaning utilities\n├── streamlit_app.py # Streamlit application\n├── data/ # Included datasets\n└── __init__.py\n\n\n\n\n\nContains functions for preparing and cleaning raw datasets. Note there are several functions in this file that use an API to source and piece together the dataset. If the polished dataset is all that is needed use the code below to acquire a dataframe that sources data included in the package.\nExample usage:\nfrom usadata.cleaning import US\n\nclean_df = USdata()\n\n\n\nProvides functions for T-Tests and regression analysis.\nExample usage:\nfrom usadata.analysis import TTests\n\nTTests(clean_df)\n\n\n\nLaunches an interactive Streamlit dashboard for visualizing U.S. data.\nTo run the app:\nstreamlit run streamlit_app.py\n\n\n\n\nThe data/ directory in the src/usadata directory contains packaged datasets that are accessed internally using importlib.resources. These datasets are used in the functions that use the final polished dataset and also for sourcing some of the states data that requires excel files to merge the data.\n\n\n\nKey dependencies include: - pandas - streamlit - plotly - us - numpy - scipy - statsmodels - httpx - geopandas - requests\nSee requirements.txt for the full list.\n\n\n\n\nimport usaata\nfrom usadata.cleaning import USdata\nfrom usadata.analysis import TTests, regression analysis\n\nclean_df = USdata()\nTTests(clean_df)\nregression_analysis(clean_df)\n\n\n\nThis project is licensed under the MIT License.\n\n\n\nCreated by Rebekah Jensen and Noah Champagne as part of a course project.\n\n\n\nThis package was built using the modern Python packaging standard (pyproject.toml) and uv_build."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "My Python Package!",
     "section": "",
-    "text": "Here is a website all about my package for STAT 386!\nDocumentation here.\nGet started here."
+    "text": "Here is a website all about my package for STAT 386!\nDocumentation here.\nGet started here.\nReview the technical report."
+  },
+  {
+    "objectID": "Documentation.html#overview",
+    "href": "Documentation.html#overview",
+    "title": "Documentation",
+    "section": "",
+    "text": "==USAData== is a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.\nThis package provides: - Data cleaning tolls - Data analysis functions - Runnable streamlit app"
+  },
+  {
+    "objectID": "Documentation.html#installation",
+    "href": "Documentation.html#installation",
+    "title": "Documentation",
+    "section": "",
+    "text": "You can install the required dependencies using:\nuv pip install -r requirements.txt\nTo install the package locally:\nuv pip install -e ."
+  },
+  {
+    "objectID": "Documentation.html#package-structure",
+    "href": "Documentation.html#package-structure",
+    "title": "Documentation",
+    "section": "",
+    "text": "USAData/\n├── analysis.py # Data analysis functions\n├── cleaning.py # Data cleaning utilities\n├── streamlit_app.py # Streamlit application\n├── data/ # Included datasets\n└── __init__.py"
+  },
+  {
+    "objectID": "Documentation.html#modules-and-functions",
+    "href": "Documentation.html#modules-and-functions",
+    "title": "Documentation",
+    "section": "",
+    "text": "Contains functions for preparing and cleaning raw datasets. Note there are several functions in this file that use an API to source and piece together the dataset. If the polished dataset is all that is needed use the code below to acquire a dataframe that sources data included in the package.\nExample usage:\nfrom usadata.cleaning import US\n\nclean_df = USdata()\n\n\n\nProvides functions for T-Tests and regression analysis.\nExample usage:\nfrom usadata.analysis import TTests\n\nTTests(clean_df)\n\n\n\nLaunches an interactive Streamlit dashboard for visualizing U.S. data.\nTo run the app:\nstreamlit run streamlit_app.py"
+  },
+  {
+    "objectID": "Documentation.html#data",
+    "href": "Documentation.html#data",
+    "title": "Documentation",
+    "section": "",
+    "text": "The data/ directory in the src/usadata directory contains packaged datasets that are accessed internally using importlib.resources. These datasets are used in the functions that use the final polished dataset and also for sourcing some of the states data that requires excel files to merge the data."
+  },
+  {
+    "objectID": "Documentation.html#dependencies",
+    "href": "Documentation.html#dependencies",
+    "title": "Documentation",
+    "section": "",
+    "text": "Key dependencies include: - pandas - streamlit - plotly - us - numpy - scipy - statsmodels - httpx - geopandas - requests\nSee requirements.txt for the full list."
+  },
+  {
+    "objectID": "Documentation.html#example-workflow",
+    "href": "Documentation.html#example-workflow",
+    "title": "Documentation",
+    "section": "",
+    "text": "import usaata\nfrom usadata.cleaning import USdata\nfrom usadata.analysis import TTests, regression analysis\n\nclean_df = USdata()\nTTests(clean_df)\nregression_analysis(clean_df)"
+  },
+  {
+    "objectID": "Documentation.html#license",
+    "href": "Documentation.html#license",
+    "title": "Documentation",
+    "section": "",
+    "text": "This project is licensed under the MIT License."
+  },
+  {
+    "objectID": "Documentation.html#authors",
+    "href": "Documentation.html#authors",
+    "title": "Documentation",
+    "section": "",
+    "text": "Created by Rebekah Jensen and Noah Champagne as part of a course project."
+  },
+  {
+    "objectID": "Documentation.html#notes",
+    "href": "Documentation.html#notes",
+    "title": "Documentation",
+    "section": "",
+    "text": "This package was built using the modern Python packaging standard (pyproject.toml) and uv_build."
+  },
+  {
+    "objectID": "TechnicalReport.html",
+    "href": "TechnicalReport.html",
+    "title": "Technical Report",
+    "section": "",
+    "text": "TODO: Provide a concise overview of the project objectives, key findings, and actionable recommendations."
+  },
+  {
+    "objectID": "TechnicalReport.html#executive-summary",
+    "href": "TechnicalReport.html#executive-summary",
+    "title": "Technical Report",
+    "section": "",
+    "text": "TODO: Provide a concise overview of the project objectives, key findings, and actionable recommendations."
+  },
+  {
+    "objectID": "TechnicalReport.html#project-context",
+    "href": "TechnicalReport.html#project-context",
+    "title": "Technical Report",
+    "section": "Project Context",
+    "text": "Project Context\nTODO: Describe the motivation, stakeholders, and success criteria for this analysis."
+  },
+  {
+    "objectID": "TechnicalReport.html#data-sources",
+    "href": "TechnicalReport.html#data-sources",
+    "title": "Technical Report",
+    "section": "Data Sources",
+    "text": "Data Sources\n\nPrimary dataset: TODO - name and link\nSupplementary data: TODO - describe any external references\nData access notes: TODO - mention licenses or refresh cadence"
+  },
+  {
+    "objectID": "TechnicalReport.html#methodology",
+    "href": "TechnicalReport.html#methodology",
+    "title": "Technical Report",
+    "section": "Methodology",
+    "text": "Methodology\n\nData Acquisition\n\nWe collected data from OpenAQ, a nonprofit that aggregates and provides open air quality data globally. We accessed this data with an API key and …..\nThe second source of data we used was the Measure of America website. Measure of America is an initiative of the Social Science Research Council in Brooklyn, New York, and it provides information on each state’s demographics, Human Development Index, housing situation, crime, environmental conditions, and more. This data did not need to be scraped; it was downloaded as Excel files, which we then cleaned and combined with our PM2.5 data.\n\nData acquisition: TODO - outline collection scripts/APIs\nCleaning pipeline: TODO - summarize transformations and validations implemented\nAnalysis workflow: TODO - describe statistical or modeling techniques\nTooling: TODO - list packages, environments, and reproducibility steps"
+  },
+  {
+    "objectID": "TechnicalReport.html#results-diagnostics",
+    "href": "TechnicalReport.html#results-diagnostics",
+    "title": "Technical Report",
+    "section": "Results & Diagnostics",
+    "text": "Results & Diagnostics\nTODO: Summarize the main metrics, charts, or model diagnostics produced. Include links to figures or tables once available."
+  },
+  {
+    "objectID": "TechnicalReport.html#discussion-next-steps",
+    "href": "TechnicalReport.html#discussion-next-steps",
+    "title": "Technical Report",
+    "section": "Discussion & Next Steps",
+    "text": "Discussion & Next Steps\nTODO: Interpret the results, note limitations, and capture open questions or future experiments."
+  },
+  {
+    "objectID": "Tutorial.html#immediate-access-to-clean-dataset",
+    "href": "Tutorial.html#immediate-access-to-clean-dataset",
+    "title": "Getting Started",
+    "section": "Immediate Access to Clean Dataset",
+    "text": "Immediate Access to Clean Dataset\nThe following function will return the clean polished dataset as a dataframe without having to go through the API form OpenAQ:\n\nfrom usadata import cleaning as US\n\ndata = US.USdata()"
+  },
+  {
+    "objectID": "Tutorial.html#using-api-functions",
+    "href": "Tutorial.html#using-api-functions",
+    "title": "Getting Started",
+    "section": "Using API Functions",
+    "text": "Using API Functions\nIt is important you follow the steps below in order to achieve the same dataset the USdata function outputs.\n\nUS Locations\nThe first step to acquiring the data necessary for the polished set is getting all locations of sensors in the USA. Using the following function will give you a dataframe of all US sensors.\n\nfrom usadata import cleaning as US\n\nKEY = YOUR_API_KEY\n\nsensor_locations = US.get_locations(KEY)\n\n\n\nSample Locations\nThe amount of sensors is a large amount of data, in order cut down on the amount of locations and time for requesting from the API, the following function samples 25 locations from each state.\nUse the dataframe created from the US location function to pass into the sample function.\n\nfrom usadata import cleaning as US\n\nsampled_locations = US.sample_location(sensor_locations)\n\n\n\nSensor IDs\nUsing the sampled locations dataframe the following function gets the sensor IDs for the measurement PM 2.5 from the API.\nPass in the sampled locations dataframe from the previous function.\n\nfrom usadata import cleaning as US\n\nKEY = YOUR_API_KEY\n\nsensor_id = get_sensorID(sampled_locations, KEY)\n\n\n\nAverage PM 2.5\nUsing the dataframe acquired from the previous function the following function gathers the average of the sensors lifetime from the API. This function will return a result to an existing .CSV file. You must have an output .CSV file declared.\nPass in the resulting dataframe from the previous function into the first argument.\n\nfrom usadata import cleaning as US\n\nKEY = YOUR_API_KEY\n\nOUTPUT_CSV = \"Your_csv_file.csv\"\n\nfetch_averages(sensor_ids, OUTPUT_CSV, KEY)"
+  },
+  {
+    "objectID": "Tutorial.html#united-states-statistics",
+    "href": "Tutorial.html#united-states-statistics",
+    "title": "Getting Started",
+    "section": "United States Statistics",
+    "text": "United States Statistics\nThe polished dataset results in 50 data points each corresponding to a state. The following function will melt several excel files given in the package for you to melt and consolidate with the air quality data gathered from the API.\nThe following function returns the result from the melted excel files.\n\nfrom usadata import cleaning as US\n\nState_Data = US.state_info()\n\nThe last step to creating the dataset is merging the two dataframes collected in this process. Note this function can only pass dataframes, be sure to read in you sensor averages using Pandas before passing to the function.\nThis function takes the average of the averages gathered for each state then maps it to the states in the states data created from merging the excel files.\n\nfrom usadata import cleaning as US\nimport pandas as pd\n\nSensor_Averages = pd.read\n\ncleaned_data = US.merge_data(Sensor_Averages, State_Data)"
+  },
+  {
+    "objectID": "Tutorial.html#t-test",
+    "href": "Tutorial.html#t-test",
+    "title": "Getting Started",
+    "section": "T-Test",
+    "text": "T-Test\nThe T-Test function test if there is significant differences between north and south regions of the US as well as east and west regions. The T-Test prints the region, the variable tested, the test statistic, and p-value.\n\nfrom usadata import analysis as US\n\ndata = US.USdata()\n\nUS.TTests(data)"
+  },
+  {
+    "objectID": "Tutorial.html#multiple-linear-regression",
+    "href": "Tutorial.html#multiple-linear-regression",
+    "title": "Getting Started",
+    "section": "Multiple Linear Regression",
+    "text": "Multiple Linear Regression\nThe regression function takes in the dataset and the desired response variable. The function will run a best subsets to choose significant predictors using ACI measurement. The best fit model found using best subsets will print a summary output of the model.\nNOTE: The response variable must be a string input and correspond to a column name in the USdata data.\n\nfrom usadata import analysis as US\n\nresponse = \"Avg_PM25\"\n\ndata = US.USdata()\n\nUS.regression_analysis(data, response)"
   }
 ]
