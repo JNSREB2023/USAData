@@ -1,0 +1,160 @@
+---
+title: "Getting Started"
+jupyter: python3
+---
+
+Here is how you use our package:
+
+This package two different processes for getting the data. For simplicity purposes the first process is using an API key acquired from [OpenAQ](https://explore.openaq.org). Follow the link to follow the API functions to gather the most current and updated data for average air quality. The second process is a polished dataset that can be used for the analysis functions. 
+
+# The Dataset
+
+## Immediate Access to Clean Dataset
+
+The following function will return the clean polished dataset as a dataframe without having to go through the API form OpenAQ:
+
+```{python}
+#| eval: false
+
+from usadata import cleaning as US
+
+data = US.USdata()
+```
+
+
+## Using API Functions
+
+It is important you follow the steps below in order to achieve the same dataset the USdata function outputs. 
+
+### US Locations
+
+The first step to acquiring the data necessary for the polished set is getting all locations of sensors in the USA. Using the following function will give you a dataframe of all US sensors. 
+
+```{python}
+#| eval: false
+
+from usadata import cleaning as US
+
+KEY = YOUR_API_KEY
+
+sensor_locations = US.get_locations(KEY)
+
+```
+
+### Sample Locations
+
+The amount of sensors is a large amount of data, in order cut down on the amount of locations and time for requesting from the API, the following function samples 25 locations from each state.
+
+Use the dataframe created from the US location function to pass into the sample function. 
+
+```{python}
+#| eval: false
+
+from usadata import cleaning as US
+
+sampled_locations = US.sample_location(sensor_locations)
+
+```
+
+### Sensor IDs
+
+Using the sampled locations dataframe the following function gets the sensor IDs for the measurement PM 2.5 from the API.
+
+Pass in the sampled locations dataframe from the previous function. 
+
+```{python}
+#| eval: false
+
+from usadata import cleaning as US
+
+KEY = YOUR_API_KEY
+
+sensor_id = get_sensorID(sampled_locations, KEY)
+
+```
+
+### Average PM 2.5
+
+Using the dataframe acquired from the previous function the following function gathers the average of the sensors lifetime from the API. This function will return a result to an existing .CSV file. You must have an output .CSV file declared. 
+
+Pass in the resulting dataframe from the previous function into the first argument. 
+
+```{python}
+#| eval: false
+
+from usadata import cleaning as US
+
+KEY = YOUR_API_KEY
+
+OUTPUT_CSV = "Your_csv_file.csv"
+
+fetch_averages(sensor_ids, OUTPUT_CSV, KEY)
+
+```
+
+## United States Statistics
+
+The polished dataset results in 50 data points each corresponding to a state. The following function will melt several excel files given in the package for you to melt and consolidate with the air quality data gathered from the API.
+
+The following function returns the result from the melted excel files. 
+
+```{python}
+#| eval: false
+
+from usadata import cleaning as US
+
+State_Data = US.state_info()
+
+```
+
+The last step to creating the dataset is merging the two dataframes collected in this process. Note this function can only pass dataframes, be sure to read in you sensor averages using Pandas before passing to the function. 
+
+This function takes the average of the averages gathered for each state then maps it to the states in the states data created from merging the excel files. 
+
+```{python}
+#| eval: false
+
+from usadata import cleaning as US
+import pandas as pd
+
+Sensor_Averages = pd.read
+
+cleaned_data = US.merge_data(Sensor_Averages, State_Data)
+
+```
+
+
+# Analysis Functions
+
+For the analysis functions it is best when used with the polished dataset acquired from the USData function. The following functions will help with running a few statistical analyses on the polished dataset.
+
+
+## T-Test 
+
+The T-Test function test if there is significant differences between north and south regions of the US as well as east and west regions. The T-Test prints the region, the variable tested, the test statistic, and p-value. 
+
+```{python}
+from usadata import analysis as US
+
+data = US.USdata()
+
+US.TTests(data)
+
+```
+
+## Multiple Linear Regression
+
+The regression function takes in the dataset and the desired response variable. The function will run a best subsets to choose significant predictors using ACI measurement. The best fit model found using best subsets will print a summary output of the model. 
+
+**NOTE:** The response variable must be a string input and correspond to a column name in the USdata data. 
+
+```{python}
+from usadata import analysis as US
+
+response = "Avg_PM25"
+
+data = US.USdata()
+
+US.regression_analysis(data, response)
+
+```

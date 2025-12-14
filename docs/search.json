@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "Tutorial.html",
+    "href": "Tutorial.html",
+    "title": "Getting Started",
+    "section": "",
+    "text": "Here is how you use my package:\n\nfrom final_project_demo import add\n\nprint(add(2, 19))\n\n21\n\n\n\nfrom final_project_demo import run_analysis_pipeline, run_cleaning_pipeling\n\nrun_cleaning_pipeling()\nrun_analysis_pipeline()\n\nRunning cleaning pipeline...\nRunning analysis pipeline..."
+  },
+  {
+    "objectID": "Documentation.html",
+    "href": "Documentation.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "Functions:"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Python Package!",
+    "section": "",
+    "text": "Here is a website all about my package for STAT 386!\nDocumentation here.\nGet started here."
+  }
+]
