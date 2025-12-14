@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,6 +115,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">website</span>
     </a>
@@ -136,6 +139,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="./Tutorial.html" aria-current="page"> 
 <span class="menu-text">Tutorial</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./TechnicalReport.html"> 
+<span class="menu-text">Technical Report</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -147,8 +154,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-dataset" id="toc-the-dataset" class="nav-link active" data-scroll-target="#the-dataset">The Dataset</a>
+  <ul class="collapse">
+  <li><a href="#immediate-access-to-clean-dataset" id="toc-immediate-access-to-clean-dataset" class="nav-link" data-scroll-target="#immediate-access-to-clean-dataset">Immediate Access to Clean Dataset</a></li>
+  <li><a href="#using-api-functions" id="toc-using-api-functions" class="nav-link" data-scroll-target="#using-api-functions">Using API Functions</a>
+  <ul class="collapse">
+  <li><a href="#us-locations" id="toc-us-locations" class="nav-link" data-scroll-target="#us-locations">US Locations</a></li>
+  <li><a href="#sample-locations" id="toc-sample-locations" class="nav-link" data-scroll-target="#sample-locations">Sample Locations</a></li>
+  <li><a href="#sensor-ids" id="toc-sensor-ids" class="nav-link" data-scroll-target="#sensor-ids">Sensor IDs</a></li>
+  <li><a href="#average-pm-2.5" id="toc-average-pm-2.5" class="nav-link" data-scroll-target="#average-pm-2.5">Average PM 2.5</a></li>
+  </ul></li>
+  <li><a href="#united-states-statistics" id="toc-united-states-statistics" class="nav-link" data-scroll-target="#united-states-statistics">United States Statistics</a></li>
+  </ul></li>
+  <li><a href="#analysis-functions" id="toc-analysis-functions" class="nav-link" data-scroll-target="#analysis-functions">Analysis Functions</a>
+  <ul class="collapse">
+  <li><a href="#t-test" id="toc-t-test" class="nav-link" data-scroll-target="#t-test">T-Test</a></li>
+  <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression" class="nav-link" data-scroll-target="#multiple-linear-regression">Multiple Linear Regression</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -172,27 +201,122 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Here is how you use my package:</p>
-<div id="b07029ab" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> final_project_demo <span class="im">import</span> add</span>
+<p>Here is how you use our package:</p>
+<p>This package two different processes for getting the data. For simplicity purposes the first process is using an API key acquired from <a href="https://explore.openaq.org">OpenAQ</a>. Follow the link to follow the API functions to gather the most current and updated data for average air quality. The second process is a polished dataset that can be used for the analysis functions.</p>
+<section id="the-dataset" class="level1">
+<h1>The Dataset</h1>
+<section id="immediate-access-to-clean-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="immediate-access-to-clean-dataset">Immediate Access to Clean Dataset</h2>
+<p>The following function will return the clean polished dataset as a dataframe without having to go through the API form OpenAQ:</p>
+<div id="0aa9ed8f" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add(<span class="dv">2</span>, <span class="dv">19</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>21</code></pre>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> US.USdata()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="using-api-functions" class="level2">
+<h2 class="anchored" data-anchor-id="using-api-functions">Using API Functions</h2>
+<p>It is important you follow the steps below in order to achieve the same dataset the USdata function outputs.</p>
+<section id="us-locations" class="level3">
+<h3 class="anchored" data-anchor-id="us-locations">US Locations</h3>
+<p>The first step to acquiring the data necessary for the polished set is getting all locations of sensors in the USA. Using the following function will give you a dataframe of all US sensors.</p>
+<div id="8513c034" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>KEY <span class="op">=</span> YOUR_API_KEY</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sensor_locations <span class="op">=</span> US.get_locations(KEY)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b7ba431a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> final_project_demo <span class="im">import</span> run_analysis_pipeline, run_cleaning_pipeling</span>
+</section>
+<section id="sample-locations" class="level3">
+<h3 class="anchored" data-anchor-id="sample-locations">Sample Locations</h3>
+<p>The amount of sensors is a large amount of data, in order cut down on the amount of locations and time for requesting from the API, the following function samples 25 locations from each state.</p>
+<p>Use the dataframe created from the US location function to pass into the sample function.</p>
+<div id="a9740f8f" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>run_cleaning_pipeling()</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>run_analysis_pipeline()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Running cleaning pipeline...
-Running analysis pipeline...</code></pre>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sampled_locations <span class="op">=</span> US.sample_location(sensor_locations)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="sensor-ids" class="level3">
+<h3 class="anchored" data-anchor-id="sensor-ids">Sensor IDs</h3>
+<p>Using the sampled locations dataframe the following function gets the sensor IDs for the measurement PM 2.5 from the API.</p>
+<p>Pass in the sampled locations dataframe from the previous function.</p>
+<div id="8515c912" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>KEY <span class="op">=</span> YOUR_API_KEY</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>sensor_id <span class="op">=</span> get_sensorID(sampled_locations, KEY)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="average-pm-2.5" class="level3">
+<h3 class="anchored" data-anchor-id="average-pm-2.5">Average PM 2.5</h3>
+<p>Using the dataframe acquired from the previous function the following function gathers the average of the sensors lifetime from the API. This function will return a result to an existing .CSV file. You must have an output .CSV file declared.</p>
+<p>Pass in the resulting dataframe from the previous function into the first argument.</p>
+<div id="2d749a74" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>KEY <span class="op">=</span> YOUR_API_KEY</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>OUTPUT_CSV <span class="op">=</span> <span class="st">"Your_csv_file.csv"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>fetch_averages(sensor_ids, OUTPUT_CSV, KEY)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="united-states-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="united-states-statistics">United States Statistics</h2>
+<p>The polished dataset results in 50 data points each corresponding to a state. The following function will melt several excel files given in the package for you to melt and consolidate with the air quality data gathered from the API.</p>
+<p>The following function returns the result from the melted excel files.</p>
+<div id="bf4889b6" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>State_Data <span class="op">=</span> US.state_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The last step to creating the dataset is merging the two dataframes collected in this process. Note this function can only pass dataframes, be sure to read in you sensor averages using Pandas before passing to the function.</p>
+<p>This function takes the average of the averages gathered for each state then maps it to the states in the states data created from merging the excel files.</p>
+<div id="85aff288" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Sensor_Averages <span class="op">=</span> pd.read</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="op">=</span> US.merge_data(Sensor_Averages, State_Data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="analysis-functions" class="level1">
+<h1>Analysis Functions</h1>
+<p>For the analysis functions it is best when used with the polished dataset acquired from the USData function. The following functions will help with running a few statistical analyses on the polished dataset.</p>
+<section id="t-test" class="level2">
+<h2 class="anchored" data-anchor-id="t-test">T-Test</h2>
+<p>The T-Test function test if there is significant differences between north and south regions of the US as well as east and west regions. The T-Test prints the region, the variable tested, the test statistic, and p-value.</p>
+<div id="a0a7a20a" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> analysis <span class="im">as</span> US</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> US.USdata()</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>US.TTests(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="multiple-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-linear-regression">Multiple Linear Regression</h2>
+<p>The regression function takes in the dataset and the desired response variable. The function will run a best subsets to choose significant predictors using ACI measurement. The best fit model found using best subsets will print a summary output of the model.</p>
+<p><strong>NOTE:</strong> The response variable must be a string input and correspond to a column name in the USdata data.</p>
+<div id="4d999de3" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> analysis <span class="im">as</span> US</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> <span class="st">"Avg_PM25"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> US.USdata()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>US.regression_analysis(data, response)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -246,13 +370,14 @@ Running analysis pipeline...</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
