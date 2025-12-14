@@ -27,7 +27,8 @@ dependencies = [
     "us",
     "requests",
     "httpx",
-    "geopandas"
+    "geopandas",
+    "plotly"
 ]
 
 [tool.uv-build]

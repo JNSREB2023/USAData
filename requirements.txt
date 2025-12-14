@@ -1,0 +1,10 @@
+pandas
+streamlit
+plotly
+us
+numpy
+scipy
+statsmodels
+httpx
+geopandas
+requests

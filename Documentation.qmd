@@ -2,4 +2,114 @@
 title: "Documentation"
 ---
 
-Functions:
+# USAData Package Documentation
+
+## Overview
+
+==USAData== is a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.
+
+This package provides:
+- Data cleaning tolls
+- Data analysis functions
+- Runnable streamlit app
+
+## Installation 
+
+You can install the required dependencies using:
+```{bash}
+uv pip install -r requirements.txt
+```
+
+To install the package locally:
+```{bash}
+uv pip install -e .
+```
+
+## Package Structure
+
+```{text}
+USAData/
+├── analysis.py # Data analysis functions
+├── cleaning.py # Data cleaning utilities
+├── streamlit_app.py # Streamlit application
+├── data/ # Included datasets
+└── __init__.py
+```
+
+## Modules and Functions
+
+### `cleaning.py`
+Contains functions for preparing and cleaning raw datasets. Note there are several functions in this file that use an API to source and piece together the dataset. If the polished dataset is all that is needed use the code below to acquire a dataframe that sources data included in the package. 
+
+Example usage:
+```python
+from usadata.cleaning import US
+
+clean_df = USdata()
+```
+
+### `analysis.py`
+Provides functions for T-Tests and regression analysis.
+
+Example usage:
+```python
+from usadata.analysis import TTests
+
+TTests(clean_df)
+```
+
+### `streamlit_app.py`
+Launches an interactive Streamlit dashboard for visualizing U.S. data.
+
+To run the app:
+```bash
+streamlit run streamlit_app.py
+```
+
+## Data
+
+The `data/` directory in the `src/usadata` directory contains packaged datasets that are accessed internally using `importlib.resources`. These datasets are used in the functions that use the final polished dataset and also for sourcing some of the states data that requires excel files to merge the data. 
+
+## Dependencies
+
+Key dependencies include:
+- pandas
+- streamlit
+- plotly
+- us
+- numpy
+- scipy
+- statsmodels
+- httpx
+- geopandas
+- requests
+
+See `requirements.txt` for the full list.
+
+---
+
+## Example Workflow
+
+```python
+import usaata
+from usadata.cleaning import USdata
+from usadata.analysis import TTests, regression analysis
+
+clean_df = USdata()
+TTests(clean_df)
+regression_analysis(clean_df)
+```
+
+## License
+
+This project is licensed under the MIT License.
+
+
+## Authors
+
+Created by Rebekah Jensen and Noah Champagne as part of a course project.
+
+
+## Notes
+
+This package was built using the modern Python packaging standard (`pyproject.toml`) and `uv_build`.

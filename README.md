@@ -28,7 +28,7 @@ uv run streamlit run src/final_project_demo/streamlit_app.py
 run the following command to install the package in editable mode:
 
 ```bash
-pip install -e .
+uv pip install -e .
 ``` 
 
 Then you can import the package in your python scripts or notebooks:
