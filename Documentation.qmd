@@ -6,7 +6,7 @@ title: "Documentation"
 
 ## Overview
 
-==USAData== is a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.
+**usadata**is a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.
 
 This package provides:
 - Data cleaning tolls
@@ -91,6 +91,7 @@ See `requirements.txt` for the full list.
 ## Example Workflow
 
 ```python
+#| eval: false
 import usaata
 from usadata.cleaning import USdata
 from usadata.analysis import TTests, regression analysis
