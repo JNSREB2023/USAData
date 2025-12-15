@@ -95,35 +95,35 @@
     "href": "TechnicalReport.html",
     "title": "Technical Report",
     "section": "",
-    "text": "TODO: Provide a concise overview of the project objectives, key findings, and actionable recommendations."
+    "text": "This project examines the relationship between air quality and various socio-economic and demographic indicators across U.S. states. These indicators include the percentage of adults aged 25 and older who did not complete high school, the Human Development Index assigned to each state, the number of people experiencing homelessness per 10,000 residents, the percentage of the homeless population that is unsheltered, and the Health, Education, and Income indices for each state.\nWe chose to measure air quality in terms of PM2.5, which refers to fine particulate matter with a diameter of 2.5 micrometers or less from sources like vehicles, factories, and wood burning. Values were averaged from a random sample of 20 air-quality sensors in each state."
   },
   {
     "objectID": "TechnicalReport.html#executive-summary",
     "href": "TechnicalReport.html#executive-summary",
     "title": "Technical Report",
     "section": "",
-    "text": "TODO: Provide a concise overview of the project objectives, key findings, and actionable recommendations."
+    "text": "This project examines the relationship between air quality and various socio-economic and demographic indicators across U.S. states. These indicators include the percentage of adults aged 25 and older who did not complete high school, the Human Development Index assigned to each state, the number of people experiencing homelessness per 10,000 residents, the percentage of the homeless population that is unsheltered, and the Health, Education, and Income indices for each state.\nWe chose to measure air quality in terms of PM2.5, which refers to fine particulate matter with a diameter of 2.5 micrometers or less from sources like vehicles, factories, and wood burning. Values were averaged from a random sample of 20 air-quality sensors in each state."
   },
   {
     "objectID": "TechnicalReport.html#project-context",
     "href": "TechnicalReport.html#project-context",
     "title": "Technical Report",
     "section": "Project Context",
-    "text": "Project Context\nTODO: Describe the motivation, stakeholders, and success criteria for this analysis."
+    "text": "Project Context\nAir pollution is a critical public health concern, with PM2.5 being particularly harmful due to its ability to penetrate deep into the lungs and bloodstream. Understanding how and if air quality correlates with socio-economic factors such as education, income, and homelessness can help stakeholders such as public health agencies and policymakers prioritize resources and interventions.\nSuccess criteria for our project include creating a Python package that successfully cleans data from our sources and produces a final dataset that can be analyzed both visually and through descriptive statistics."
   },
   {
     "objectID": "TechnicalReport.html#data-sources",
     "href": "TechnicalReport.html#data-sources",
     "title": "Technical Report",
     "section": "Data Sources",
-    "text": "Data Sources\n\nPrimary dataset: TODO - name and link\nSupplementary data: TODO - describe any external references\nData access notes: TODO - mention licenses or refresh cadence"
+    "text": "Data Sources\n\nPrimary dataset: OpenAQ – Global air quality measurements, focusing on PM2.5 concentrations across U.S. states. Data was accessed via API.\nSupplementary data: Measure of America – Socio-economic indicators at the state level, including Human Development Index (HDI), Health Index, Education Index, Income Index, and homelessness statistics. Provided as Excel files."
   },
   {
     "objectID": "TechnicalReport.html#methodology",
     "href": "TechnicalReport.html#methodology",
     "title": "Technical Report",
     "section": "Methodology",
-    "text": "Methodology\n\nData Acquisition\n\nWe collected data from OpenAQ, a nonprofit that aggregates and provides open air quality data globally. We accessed this data with an API key and …..\nThe second source of data we used was the Measure of America website. Measure of America is an initiative of the Social Science Research Council in Brooklyn, New York, and it provides information on each state’s demographics, Human Development Index, housing situation, crime, environmental conditions, and more. This data did not need to be scraped; it was downloaded as Excel files, which we then cleaned and combined with our PM2.5 data.\n\nData acquisition: TODO - outline collection scripts/APIs\nCleaning pipeline: TODO - summarize transformations and validations implemented\nAnalysis workflow: TODO - describe statistical or modeling techniques\nTooling: TODO - list packages, environments, and reproducibility steps"
+    "text": "Methodology\n\nData Acquisition\n\nWe collected PM2.5 data from OpenAQ using their API. Obtaining individual sensor data required multiple API requests. First, we queried the API to retrieve a list of U.S. locations. Using these locations, we then sent additional requests to obtain sensor-level measurements, filtering to include only sensors that recorded PM2.5 values. After removing missing (NaN) values, we grouped the data by state and selected a random sample of 20 PM2.5 sensors per state. For each sampled sensor, we calculated the most recent yearly average and used these values to estimate a state-level PM2.5 average.\nThe Measure of America datasets were freely downloadable in Excel format; however, we were required to provide contact information, describe our intended use of the data, and consent to using the data for non-commercial purposes only.\n\nCleaning pipeline\n\nData cleaning steps included handling missing values, standardizing column names, and converting data types. Measure of America did not provide a single consolidated Excel file; instead, separate files were used to report different indicators (e.g., education, environmental information, and the Human Development Index). To assemble the required variables, we combined multiple Excel files, resolved multi-level headers, and selected only the relevant fields.\nSimilarly, the OpenAQ data required merging multiple data frames obtained from separate API requests. These were consolidated into a final data frame containing one row per U.S. state and an estimated state-level PM2.5 value, which was then joined with the socio-economic data.\nThe main tools that we used throughout this cleaning process were the python libraries pandas and requests."
   },
   {
     "objectID": "TechnicalReport.html#results-diagnostics",

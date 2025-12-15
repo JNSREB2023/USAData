@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Project summary, methodology, and findings placeholder">
 
 <title>Technical Report – website</title>
 <style>
@@ -142,11 +141,6 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Technical Report</h1>
 </div>
 
-<div>
-  <div class="description">
-    Project summary, methodology, and findings placeholder
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -163,33 +157,34 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="executive-summary" class="level2">
 <h2 class="anchored" data-anchor-id="executive-summary">Executive Summary</h2>
-<p><em>TODO: Provide a concise overview of the project objectives, key findings, and actionable recommendations.</em></p>
+<p>This project examines the relationship between air quality and various socio-economic and demographic indicators across U.S. states. These indicators include the percentage of adults aged 25 and older who did not complete high school, the Human Development Index assigned to each state, the number of people experiencing homelessness per 10,000 residents, the percentage of the homeless population that is unsheltered, and the Health, Education, and Income indices for each state.</p>
+<p>We chose to measure air quality in terms of PM2.5, which refers to fine particulate matter with a diameter of 2.5 micrometers or less from sources like vehicles, factories, and wood burning. Values were averaged from a random sample of 20 air-quality sensors in each state.</p>
 </section>
 <section id="project-context" class="level2">
 <h2 class="anchored" data-anchor-id="project-context">Project Context</h2>
-<p><em>TODO: Describe the motivation, stakeholders, and success criteria for this analysis.</em></p>
+<p>Air pollution is a critical public health concern, with PM2.5 being particularly harmful due to its ability to penetrate deep into the lungs and bloodstream. Understanding how and if air quality correlates with socio-economic factors such as education, income, and homelessness can help stakeholders such as public health agencies and policymakers prioritize resources and interventions.</p>
+<p>Success criteria for our project include creating a Python package that successfully cleans data from our sources and produces a final dataset that can be analyzed both visually and through descriptive statistics.</p>
 </section>
 <section id="data-sources" class="level2">
 <h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
 <ul>
-<li><em>Primary dataset:</em> <code>TODO - name and link</code></li>
-<li><em>Supplementary data:</em> <code>TODO - describe any external references</code></li>
-<li><em>Data access notes:</em> <code>TODO - mention licenses or refresh cadence</code></li>
+<li><strong>Primary dataset:</strong> <a href="https://openaq.org/">OpenAQ</a> – Global air quality measurements, focusing on PM2.5 concentrations across U.S. states. Data was accessed via API.</li>
+<li><strong>Supplementary data:</strong> <a href="https://measureofamerica.org/maps/">Measure of America</a> – Socio-economic indicators at the state level, including Human Development Index (HDI), Health Index, Education Index, Income Index, and homelessness statistics. Provided as Excel files.</li>
 </ul>
 </section>
 <section id="methodology" class="level2">
 <h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
 <ol type="1">
-<li>Data Acquisition</li>
+<li><strong>Data Acquisition</strong></li>
 </ol>
-<p>We collected data from <a href="https://openaq.org/">OpenAQ</a>, a nonprofit that aggregates and provides open air quality data globally. We accessed this data with an API key and …..</p>
-<p>The second source of data we used was the <a href="https://measureofamerica.org/maps/">Measure of America</a> website. Measure of America is an initiative of the Social Science Research Council in Brooklyn, New York, and it provides information on each state’s demographics, Human Development Index, housing situation, crime, environmental conditions, and more. This data did not need to be scraped; it was downloaded as Excel files, which we then cleaned and combined with our PM2.5 data.</p>
-<ol type="1">
-<li><em>Data acquisition:</em> <code>TODO - outline collection scripts/APIs</code></li>
-<li><em>Cleaning pipeline:</em> <code>TODO - summarize transformations and validations implemented</code></li>
-<li><em>Analysis workflow:</em> <code>TODO - describe statistical or modeling techniques</code></li>
-<li><em>Tooling:</em> <code>TODO - list packages, environments, and reproducibility steps</code></li>
+<p>We collected PM2.5 data from OpenAQ using their API. Obtaining individual sensor data required multiple API requests. First, we queried the API to retrieve a list of U.S. locations. Using these locations, we then sent additional requests to obtain sensor-level measurements, filtering to include only sensors that recorded PM2.5 values. After removing missing (NaN) values, we grouped the data by state and selected a random sample of 20 PM2.5 sensors per state. For each sampled sensor, we calculated the most recent yearly average and used these values to estimate a state-level PM2.5 average.</p>
+<p>The Measure of America datasets were freely downloadable in Excel format; however, we were required to provide contact information, describe our intended use of the data, and consent to using the data for non-commercial purposes only.</p>
+<ol start="2" type="1">
+<li><strong>Cleaning pipeline</strong></li>
 </ol>
+<p>Data cleaning steps included handling missing values, standardizing column names, and converting data types. Measure of America did not provide a single consolidated Excel file; instead, separate files were used to report different indicators (e.g., education, environmental information, and the Human Development Index). To assemble the required variables, we combined multiple Excel files, resolved multi-level headers, and selected only the relevant fields.</p>
+<p>Similarly, the OpenAQ data required merging multiple data frames obtained from separate API requests. These were consolidated into a final data frame containing one row per U.S. state and an estimated state-level PM2.5 value, which was then joined with the socio-economic data.</p>
+<p>The main tools that we used throughout this cleaning process were the python libraries <code>pandas</code> and <code>requests</code>.</p>
 </section>
 <section id="results-diagnostics" class="level2">
 <h2 class="anchored" data-anchor-id="results-diagnostics">Results &amp; Diagnostics</h2>
