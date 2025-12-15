@@ -5,7 +5,7 @@ jupyter: python3
 
 Here is how you use our package:
 
-This package two different processes for getting the data. For simplicity purposes the first process is using an API key acquired from [OpenAQ](https://explore.openaq.org). Follow the link to follow the API functions to gather the most current and updated data for average air quality. The second process is a polished dataset that can be used for the analysis functions. 
+This package has two different processes for getting the data. For simplicity purposes the first process is using an API key acquired from [OpenAQ](https://explore.openaq.org). Follow the link to follow the API functions to gather the most current and updated data for average air quality. The second process is a polished dataset that can be used for the analysis functions. 
 
 # The Dataset
 
@@ -145,7 +145,7 @@ US.TTests(data)
 
 ## Multiple Linear Regression
 
-The regression function takes in the dataset and the desired response variable. The function will run a best subsets to choose significant predictors using ACI measurement. The best fit model found using best subsets will print a summary output of the model. 
+The regression function takes in the dataset and the desired response variable. The function will run a best subsets to choose significant predictors using AIC measurement. The best fit model found using best subsets will print a summary output of the model. 
 
 **NOTE:** The response variable must be a string input and correspond to a column name in the USdata data. 
 
