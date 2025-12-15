@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -130,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
   <li><a href="#results-diagnostics" id="toc-results-diagnostics" class="nav-link" data-scroll-target="#results-diagnostics">Results &amp; Diagnostics</a>
   <ul class="collapse">
-  <li><a href="#comparing-regions-north-vs-southern-states" id="toc-comparing-regions-north-vs-southern-states" class="nav-link" data-scroll-target="#comparing-regions-north-vs-southern-states">Comparing Regions: North vs Southern States</a></li>
+  <li><a href="#comparing-regions-northern-vs-southern-states" id="toc-comparing-regions-northern-vs-southern-states" class="nav-link" data-scroll-target="#comparing-regions-northern-vs-southern-states">Comparing Regions: Northern vs Southern States</a></li>
   <li><a href="#comparing-regions-east-vs-west-states" id="toc-comparing-regions-east-vs-west-states" class="nav-link" data-scroll-target="#comparing-regions-east-vs-west-states">Comparing Regions: East vs West States</a></li>
   </ul></li>
   <li><a href="#best-ols-model-for-average-pm-2.5" id="toc-best-ols-model-for-average-pm-2.5" class="nav-link" data-scroll-target="#best-ols-model-for-average-pm-2.5">Best OLS Model for Average PM 2.5</a>
@@ -198,9 +198,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="results-diagnostics" class="level2">
 <h2 class="anchored" data-anchor-id="results-diagnostics">Results &amp; Diagnostics</h2>
-<p><em>TODO: Summarize the main metrics, charts, or model diagnostics produced. Include links to figures or tables once available.</em></p>
-<section id="comparing-regions-north-vs-southern-states" class="level3">
-<h3 class="anchored" data-anchor-id="comparing-regions-north-vs-southern-states">Comparing Regions: North vs Southern States</h3>
+<p>Using our package, we performed several analyses on our data. The analyses and their results are outlined in the following sections.</p>
+<section id="comparing-regions-northern-vs-southern-states" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-regions-northern-vs-southern-states">Comparing Regions: Northern vs Southern States</h3>
+<p>We used a t-test to compare Northern and Southern states. The only variable showing a statistically significant regional difference is Health_Index. Other variables (air pollution, education, income, homelessness) do not differ significantly between North and Southern states.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -240,6 +241,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="comparing-regions-east-vs-west-states" class="level3">
 <h3 class="anchored" data-anchor-id="comparing-regions-east-vs-west-states">Comparing Regions: East vs West States</h3>
+<p>Looking at Eastern vs Western states, there is a significant difference in both education and health indices, but none of the other socioeconomic measures.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -281,6 +283,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="best-ols-model-for-average-pm-2.5" class="level2">
 <h2 class="anchored" data-anchor-id="best-ols-model-for-average-pm-2.5">Best OLS Model for Average PM 2.5</h2>
 <p><strong>Predictors:</strong> Not Graduated, HDI, Homeless Ratio</p>
+<p>The best Ordinary Least Squares (OLS) model for predicting average PM2.5 levels looked at three state-level factors: the percentage of people age 25 and over who did not graduate from high school, the Human Development Index (HDI), and the homelessness ratio. The model explains only a small part of the differences in PM2.5 between states. Of the three factors, not graduating and homelessness were significant predictors: states with more people who did not graduate tended to have higher PM2.5, while states with higher homelessness had slightly lower PM2.5. HDI showed a small positive effect, but it was not strong enough to be considered statistically significant. The model also suggests that the predictors themselves might be closely related (multicollinearity), which can make the specific size of the effects a little less certain. Some tests suggest that the data is a bit uneven (the errors are not normally distributed), so the results should be interpreted with caution.</p>
 <section id="model-fit-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="model-fit-statistics">Model Fit Statistics</h3>
 <table class="caption-top table">
@@ -429,9 +432,27 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="discussion-next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-next-steps">Discussion &amp; Next Steps</h2>
-<p><em>TODO: Interpret the results, note limitations, and capture open questions or future experiments.</em></p>
+<p>Our analysis aimed to identify key state-level factors associated with average PM2.5 levels across the U.S. using an Ordinary Least Squares (OLS) regression model. The overall model only explained a small portion (13.5%) of the differences in PM2.5 between states, indicating that most of the variation is driven by other factors not included in this analysis, such as local industry, geography, or specific air quality regulations.</p>
+<p>The choropleth map on our <a href="https://usadata-ud9jga4moajasfjsnuocvw.streamlit.app/">Streamlit app</a> shows the geographical spread of PM2.5 values, highlighting state-to-state variation. Notably, the map shows that Virginia has a high PM2.5 value, which appears to be an outlier that could be influencing the regression results.</p>
+<p>The <strong>correlation matrix</strong> reveals some interesting relationships. Unfortunately, the average PM2.5 value for each state only has a weak positive correlation with the percentage of adults who did not graduate high school, and an almost nonexistent correlation with the other variables, including the Health, Education, and Income indices.</p>
+<p>As expected, the Human Development Index (HDI) is highly correlated with its constituent parts—Health, Education, and Income indices. There are, however, to suprising observations. First, there is a moderate positive correlation (+0.53) between the Homeless Ratio and the HDI, which seems counter-intuitive and may be worth further investigation. The correlation matrix also shows a weak linear relationship between the percentage of electricity generated by coal and natural gas and the average PM2.5 levels, which we expected would have a relationship.</p>
+<section id="limitations" class="level4">
+<h4 class="anchored" data-anchor-id="limitations">Limitations</h4>
+<ul>
+<li><p><strong>Multicollinearity</strong>: The OLS model and the correlation matrix indicated that there was multicollinearity—several predictor variables are highly correlated with each other. This makes it difficult to isolate the unique effect of any single predictor.</p></li>
+<li><p><strong>Outlier Influence</strong>: The presence of a likely outlier (one of Virginia’s sensors) may be distorting the fit of the model and the coefficient values.</p></li>
+</ul>
+</section>
+<section id="future-experiments-and-open-questions" class="level4">
+<h4 class="anchored" data-anchor-id="future-experiments-and-open-questions">Future Experiments and Open Questions</h4>
+<p>To build a more robust predictive model, future analysis should consider the following steps:</p>
+<ul>
+<li><strong>Address Outliers</strong>: Run the model again after removing the outlier sensor in Virginia to see if anything changes.</li>
+<li><strong>Explore Different Predictors</strong>: Given the model’s low R², additional variables should be investigated, such as state-level air quality regulations, population density, or local industry composition (e.g., manufacturing vs.&nbsp;service).</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
