@@ -209,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="immediate-access-to-clean-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="immediate-access-to-clean-dataset">Immediate Access to Clean Dataset</h2>
 <p>The following function will return the clean polished dataset as a dataframe without having to go through the API form OpenAQ:</p>
-<div id="4ed9a922" class="cell" data-execution_count="1">
+<div id="e9c3f14c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> US.USdata()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="us-locations" class="level3">
 <h3 class="anchored" data-anchor-id="us-locations">US Locations</h3>
 <p>The first step to acquiring the data necessary for the polished set is getting all locations of sensors in the USA. Using the following function will give you a dataframe of all US sensors.</p>
-<div id="7e737037" class="cell" data-execution_count="2">
+<div id="da629114" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>KEY <span class="op">=</span> YOUR_API_KEY</span>
@@ -233,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="sample-locations">Sample Locations</h3>
 <p>The amount of sensors is a large amount of data, in order cut down on the amount of locations and time for requesting from the API, the following function samples 25 locations from each state.</p>
 <p>Use the dataframe created from the US location function to pass into the sample function.</p>
-<div id="3454d06b" class="cell" data-execution_count="3">
+<div id="14157089" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sampled_locations <span class="op">=</span> US.sample_location(sensor_locations)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -243,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="sensor-ids">Sensor IDs</h3>
 <p>Using the sampled locations dataframe the following function gets the sensor IDs for the measurement PM 2.5 from the API.</p>
 <p>Pass in the sampled locations dataframe from the previous function.</p>
-<div id="18fa57a3" class="cell" data-execution_count="4">
+<div id="7dc9d9a5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>KEY <span class="op">=</span> YOUR_API_KEY</span>
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="average-pm-2.5">Average PM 2.5</h3>
 <p>Using the dataframe acquired from the previous function the following function gathers the average of the sensors lifetime from the API. This function will return a result to an existing .CSV file. You must have an output .CSV file declared.</p>
 <p>Pass in the resulting dataframe from the previous function into the first argument.</p>
-<div id="f15ffc8c" class="cell" data-execution_count="5">
+<div id="3b6eec42" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>KEY <span class="op">=</span> YOUR_API_KEY</span>
@@ -270,14 +270,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="united-states-statistics">United States Statistics</h2>
 <p>The polished dataset results in 50 data points each corresponding to a state. The following function will melt several excel files given in the package for you to melt and consolidate with the air quality data gathered from the API.</p>
 <p>The following function returns the result from the melted excel files.</p>
-<div id="d9764f1e" class="cell" data-execution_count="6">
+<div id="a7fba328" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>State_Data <span class="op">=</span> US.state_info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The last step to creating the dataset is merging the two dataframes collected in this process. Note this function can only pass dataframes, be sure to read in you sensor averages using Pandas before passing to the function.</p>
 <p>This function takes the average of the averages gathered for each state then maps it to the states in the states data created from merging the excel files.</p>
-<div id="6084c9cc" class="cell" data-execution_count="7">
+<div id="44f599c4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> cleaning <span class="im">as</span> US</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -293,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="t-test" class="level2">
 <h2 class="anchored" data-anchor-id="t-test">T-Test</h2>
 <p>The T-Test function test if there is significant differences between north and south regions of the US as well as east and west regions. The T-Test prints the region, the variable tested, the test statistic, and p-value.</p>
-<div id="fc0d4795" class="cell" data-execution_count="8">
+<div id="440f2327" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> analysis <span class="im">as</span> US</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> US.USdata()</span>
@@ -305,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="multiple-linear-regression">Multiple Linear Regression</h2>
 <p>The regression function takes in the dataset and the desired response variable. The function will run a best subsets to choose significant predictors using AIC measurement. The best fit model found using best subsets will print a summary output of the model.</p>
 <p><strong>NOTE:</strong> The response variable must be a string input and correspond to a column name in the USdata data.</p>
-<div id="195ab82e" class="cell" data-execution_count="9">
+<div id="a11af429" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> usadata <span class="im">import</span> analysis <span class="im">as</span> US</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> <span class="st">"Avg_PM25"</span></span>
