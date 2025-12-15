@@ -8,6 +8,17 @@ This repository is the scaffolding for the python package usadata. It includes:
 - a Streamlit prototype app
 - a Quarto site for documentation and reporting
 
+The link to the repository is [HERE](https://github.com/JNSREB2023/USAData).
+Link to website [HERE](https://jnsreb2023.github.io/USAData/).
+
+## Dependencies
+- Python 3.8+
+- The required packages can be installed via pip:
+
+```bash
+uv pip install -r requirements.txt
+```
+
 ## Quick start
 
 ```bash
