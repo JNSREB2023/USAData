@@ -4,7 +4,7 @@
     "href": "Tutorial.html",
     "title": "Getting Started",
     "section": "",
-    "text": "Here is how you use our package:\nThis package has two different processes for getting the data. The first process is a polished dataset that can be used for the analysis functions. The second process uses an API key acquired from OpenAQ. Follow the link to follow the API functions to gather the most current and updated data for average air quality. The first process is a polished dataset that can be used for the analysis functions.\nNote: The functions that use the API require a large amount of processing time. The purpose of including these in the tutorial is to show the processes if recreation of the polished dataset is desired."
+    "text": "Here is how you use our package:\nThis package has two different processes for getting the data. The first process is a polished dataset that can be used for the analysis functions. The second process uses an API key acquired from OpenAQ. Follow the link to get a valid key then follow the API functions instructions below to gather the most current and updated data for average air quality.\nNote: The functions that use the API require a large amount of processing time. The purpose of including these in the tutorial is to show the processes if recreation of the polished dataset is desired."
   },
   {
     "objectID": "Documentation.html",
