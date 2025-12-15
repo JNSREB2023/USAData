@@ -4,14 +4,14 @@
     "href": "Tutorial.html",
     "title": "Getting Started",
     "section": "",
-    "text": "Here is how you use our package:\nThis package two different processes for getting the data. For simplicity purposes the first process is using an API key acquired from OpenAQ. Follow the link to follow the API functions to gather the most current and updated data for average air quality. The second process is a polished dataset that can be used for the analysis functions."
+    "text": "Here is how you use our package:\nThis package has two different processes for getting the data. For simplicity purposes the first process is using an API key acquired from OpenAQ. Follow the link to follow the API functions to gather the most current and updated data for average air quality. The second process is a polished dataset that can be used for the analysis functions."
   },
   {
     "objectID": "Documentation.html",
     "href": "Documentation.html",
     "title": "Documentation",
     "section": "",
-    "text": "==USAData== is a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.\nThis package provides: - Data cleaning tolls - Data analysis functions - Runnable streamlit app\n\n\n\nYou can install the required dependencies using:\nuv pip install -r requirements.txt\nTo install the package locally:\nuv pip install -e .\n\n\n\nUSAData/\n├── analysis.py # Data analysis functions\n├── cleaning.py # Data cleaning utilities\n├── streamlit_app.py # Streamlit application\n├── data/ # Included datasets\n└── __init__.py\n\n\n\n\n\nContains functions for preparing and cleaning raw datasets. Note there are several functions in this file that use an API to source and piece together the dataset. If the polished dataset is all that is needed use the code below to acquire a dataframe that sources data included in the package.\nExample usage:\nfrom usadata.cleaning import US\n\nclean_df = USdata()\n\n\n\nProvides functions for T-Tests and regression analysis.\nExample usage:\nfrom usadata.analysis import TTests\n\nTTests(clean_df)\n\n\n\nLaunches an interactive Streamlit dashboard for visualizing U.S. data.\nTo run the app:\nstreamlit run streamlit_app.py\n\n\n\n\nThe data/ directory in the src/usadata directory contains packaged datasets that are accessed internally using importlib.resources. These datasets are used in the functions that use the final polished dataset and also for sourcing some of the states data that requires excel files to merge the data.\n\n\n\nKey dependencies include: - pandas - streamlit - plotly - us - numpy - scipy - statsmodels - httpx - geopandas - requests\nSee requirements.txt for the full list.\n\n\n\n\nimport usaata\nfrom usadata.cleaning import USdata\nfrom usadata.analysis import TTests, regression analysis\n\nclean_df = USdata()\nTTests(clean_df)\nregression_analysis(clean_df)\n\n\n\nThis project is licensed under the MIT License.\n\n\n\nCreated by Rebekah Jensen and Noah Champagne as part of a course project.\n\n\n\nThis package was built using the modern Python packaging standard (pyproject.toml) and uv_build."
+    "text": "usadatais a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.\nThis package provides: - Data cleaning tolls - Data analysis functions - Runnable streamlit app\n\n\n\nYou can install the required dependencies using:\nuv pip install -r requirements.txt\nTo install the package locally:\nuv pip install -e .\n\n\n\nUSAData/\n├── analysis.py # Data analysis functions\n├── cleaning.py # Data cleaning utilities\n├── streamlit_app.py # Streamlit application\n├── data/ # Included datasets\n└── __init__.py\n\n\n\n\n\nContains functions for preparing and cleaning raw datasets. Note there are several functions in this file that use an API to source and piece together the dataset. If the polished dataset is all that is needed use the code below to acquire a dataframe that sources data included in the package.\nExample usage:\nfrom usadata.cleaning import US\n\nclean_df = USdata()\n\n\n\nProvides functions for T-Tests and regression analysis.\nExample usage:\nfrom usadata.analysis import TTests\n\nTTests(clean_df)\n\n\n\nLaunches an interactive Streamlit dashboard for visualizing U.S. data.\nTo run the app:\nstreamlit run streamlit_app.py\n\n\n\n\nThe data/ directory in the src/usadata directory contains packaged datasets that are accessed internally using importlib.resources. These datasets are used in the functions that use the final polished dataset and also for sourcing some of the states data that requires excel files to merge the data.\n\n\n\nKey dependencies include: - pandas - streamlit - plotly - us - numpy - scipy - statsmodels - httpx - geopandas - requests\nSee requirements.txt for the full list.\n\n\n\n\n#| eval: false\nimport usaata\nfrom usadata.cleaning import USdata\nfrom usadata.analysis import TTests, regression analysis\n\nclean_df = USdata()\nTTests(clean_df)\nregression_analysis(clean_df)\n\n\n\nThis project is licensed under the MIT License.\n\n\n\nCreated by Rebekah Jensen and Noah Champagne as part of a course project.\n\n\n\nThis package was built using the modern Python packaging standard (pyproject.toml) and uv_build."
   },
   {
     "objectID": "index.html",
@@ -25,7 +25,7 @@
     "href": "Documentation.html#overview",
     "title": "Documentation",
     "section": "",
-    "text": "==USAData== is a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.\nThis package provides: - Data cleaning tolls - Data analysis functions - Runnable streamlit app"
+    "text": "usadatais a Python package designed to support cleaning, analysis, and visualization of United States–related datasets. It is intended for students and analysts who want simple, reusable tools for working with U.S. demographic and statistical data.\nThis package provides: - Data cleaning tolls - Data analysis functions - Runnable streamlit app"
   },
   {
     "objectID": "Documentation.html#installation",
@@ -67,7 +67,7 @@
     "href": "Documentation.html#example-workflow",
     "title": "Documentation",
     "section": "",
-    "text": "import usaata\nfrom usadata.cleaning import USdata\nfrom usadata.analysis import TTests, regression analysis\n\nclean_df = USdata()\nTTests(clean_df)\nregression_analysis(clean_df)"
+    "text": "#| eval: false\nimport usaata\nfrom usadata.cleaning import USdata\nfrom usadata.analysis import TTests, regression analysis\n\nclean_df = USdata()\nTTests(clean_df)\nregression_analysis(clean_df)"
   },
   {
     "objectID": "Documentation.html#license",
@@ -130,7 +130,7 @@
     "href": "TechnicalReport.html#results-diagnostics",
     "title": "Technical Report",
     "section": "Results & Diagnostics",
-    "text": "Results & Diagnostics\nTODO: Summarize the main metrics, charts, or model diagnostics produced. Include links to figures or tables once available."
+    "text": "Results & Diagnostics\nTODO: Summarize the main metrics, charts, or model diagnostics produced. Include links to figures or tables once available.\n\nComparing Regions: North vs Southern States\n\n\n\nVariable\nt-statistic\np-value\n\n\n\n\nAvg_PM25\n-0.6254\n0.5377\n\n\nHealth_Index\n4.6735\n0.0001\n\n\nEducation_Index\n1.6863\n0.1055\n\n\nIncome_Index\n0.8212\n0.4191\n\n\nHomeless_Ratio\n-0.0878\n0.9310\n\n\n\n\n\nComparing Regions: East vs West States\n\n\n\nVariable\nt-statistic\np-value\n\n\n\n\nAvg_PM25\n0.0927\n0.9268\n\n\nHealth_Index\n-2.3041\n0.0257\n\n\nEducation_Index\n2.2673\n0.0279\n\n\nIncome_Index\n1.4959\n0.1413\n\n\nHomeless_Ratio\n-0.7737\n0.4428"
   },
   {
     "objectID": "TechnicalReport.html#discussion-next-steps",
@@ -172,6 +172,13 @@
     "href": "Tutorial.html#multiple-linear-regression",
     "title": "Getting Started",
     "section": "Multiple Linear Regression",
-    "text": "Multiple Linear Regression\nThe regression function takes in the dataset and the desired response variable. The function will run a best subsets to choose significant predictors using ACI measurement. The best fit model found using best subsets will print a summary output of the model.\nNOTE: The response variable must be a string input and correspond to a column name in the USdata data.\n\nfrom usadata import analysis as US\n\nresponse = \"Avg_PM25\"\n\ndata = US.USdata()\n\nUS.regression_analysis(data, response)"
+    "text": "Multiple Linear Regression\nThe regression function takes in the dataset and the desired response variable. The function will run a best subsets to choose significant predictors using AIC measurement. The best fit model found using best subsets will print a summary output of the model.\nNOTE: The response variable must be a string input and correspond to a column name in the USdata data.\n\nfrom usadata import analysis as US\n\nresponse = \"Avg_PM25\"\n\ndata = US.USdata()\n\nUS.regression_analysis(data, response)"
+  },
+  {
+    "objectID": "TechnicalReport.html#best-ols-model-for-average-pm-2.5",
+    "href": "TechnicalReport.html#best-ols-model-for-average-pm-2.5",
+    "title": "Technical Report",
+    "section": "Best OLS Model for Average PM 2.5",
+    "text": "Best OLS Model for Average PM 2.5\nPredictors: Not Graduated, HDI, Homeless Ratio\n\nModel Fit Statistics\n\n\n\nMetric\nValue\n\n\n\n\nNumber of observations\n51\n\n\nR-squared\n0.135\n\n\nAdjusted R-squared\n0.080\n\n\nF-statistic\n2.446\n\n\nProb (F-statistic)\n0.0755\n\n\nLog-Likelihood\n-138.30\n\n\nAIC\n284.6\n\n\nBIC\n292.3\n\n\nDurbin–Watson\n1.922\n\n\n\n\n\nRegression Coefficients\n\n\n\n\n\n\n\n\n\n\n\nVariable\nCoefficient\nStd. Error\nt-statistic\np-value\n95% CI\n\n\n\n\nIntercept\n-4.7427\n6.893\n-0.688\n0.495\n[-18.609, 9.124]\n\n\nNot_graduated\n0.4467\n0.216\n2.065\n0.044\n[0.012, 0.882]\n\n\nHDI\n2.0516\n1.115\n1.840\n0.072\n[-0.191, 4.295]\n\n\nHomeless_Ratio\n-0.0818\n0.039\n-2.086\n0.042\n[-0.161, -0.003]\n\n\n\n\n\nModel Diagnostics\n\n\n\nTest\nStatistic\np-value\n\n\n\n\nOmnibus\n37.476\n0.000\n\n\nJarque–Bera\n108.202\n3.19e-24\n\n\nSkewness\n2.040\n—\n\n\nKurtosis\n8.855\n—\n\n\nCondition Number\n337\n—"
   }
 ]

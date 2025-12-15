@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.23">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1fe81d0376b2c50856e68e651e390326.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -128,7 +128,17 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#project-context" id="toc-project-context" class="nav-link" data-scroll-target="#project-context">Project Context</a></li>
   <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
   <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
-  <li><a href="#results-diagnostics" id="toc-results-diagnostics" class="nav-link" data-scroll-target="#results-diagnostics">Results &amp; Diagnostics</a></li>
+  <li><a href="#results-diagnostics" id="toc-results-diagnostics" class="nav-link" data-scroll-target="#results-diagnostics">Results &amp; Diagnostics</a>
+  <ul class="collapse">
+  <li><a href="#comparing-regions-north-vs-southern-states" id="toc-comparing-regions-north-vs-southern-states" class="nav-link" data-scroll-target="#comparing-regions-north-vs-southern-states">Comparing Regions: North vs Southern States</a></li>
+  <li><a href="#comparing-regions-east-vs-west-states" id="toc-comparing-regions-east-vs-west-states" class="nav-link" data-scroll-target="#comparing-regions-east-vs-west-states">Comparing Regions: East vs West States</a></li>
+  </ul></li>
+  <li><a href="#best-ols-model-for-average-pm-2.5" id="toc-best-ols-model-for-average-pm-2.5" class="nav-link" data-scroll-target="#best-ols-model-for-average-pm-2.5">Best OLS Model for Average PM 2.5</a>
+  <ul class="collapse">
+  <li><a href="#model-fit-statistics" id="toc-model-fit-statistics" class="nav-link" data-scroll-target="#model-fit-statistics">Model Fit Statistics</a></li>
+  <li><a href="#regression-coefficients" id="toc-regression-coefficients" class="nav-link" data-scroll-target="#regression-coefficients">Regression Coefficients</a></li>
+  <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics">Model Diagnostics</a></li>
+  </ul></li>
   <li><a href="#discussion-next-steps" id="toc-discussion-next-steps" class="nav-link" data-scroll-target="#discussion-next-steps">Discussion &amp; Next Steps</a></li>
   </ul>
 </nav>
@@ -189,6 +199,233 @@ ul.task-list li input[type="checkbox"] {
 <section id="results-diagnostics" class="level2">
 <h2 class="anchored" data-anchor-id="results-diagnostics">Results &amp; Diagnostics</h2>
 <p><em>TODO: Summarize the main metrics, charts, or model diagnostics produced. Include links to figures or tables once available.</em></p>
+<section id="comparing-regions-north-vs-southern-states" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-regions-north-vs-southern-states">Comparing Regions: North vs Southern States</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>t-statistic</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Avg_PM25</td>
+<td>-0.6254</td>
+<td>0.5377</td>
+</tr>
+<tr class="even">
+<td>Health_Index</td>
+<td>4.6735</td>
+<td>0.0001</td>
+</tr>
+<tr class="odd">
+<td>Education_Index</td>
+<td>1.6863</td>
+<td>0.1055</td>
+</tr>
+<tr class="even">
+<td>Income_Index</td>
+<td>0.8212</td>
+<td>0.4191</td>
+</tr>
+<tr class="odd">
+<td>Homeless_Ratio</td>
+<td>-0.0878</td>
+<td>0.9310</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="comparing-regions-east-vs-west-states" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-regions-east-vs-west-states">Comparing Regions: East vs West States</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>t-statistic</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Avg_PM25</td>
+<td>0.0927</td>
+<td>0.9268</td>
+</tr>
+<tr class="even">
+<td>Health_Index</td>
+<td>-2.3041</td>
+<td>0.0257</td>
+</tr>
+<tr class="odd">
+<td>Education_Index</td>
+<td>2.2673</td>
+<td>0.0279</td>
+</tr>
+<tr class="even">
+<td>Income_Index</td>
+<td>1.4959</td>
+<td>0.1413</td>
+</tr>
+<tr class="odd">
+<td>Homeless_Ratio</td>
+<td>-0.7737</td>
+<td>0.4428</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="best-ols-model-for-average-pm-2.5" class="level2">
+<h2 class="anchored" data-anchor-id="best-ols-model-for-average-pm-2.5">Best OLS Model for Average PM 2.5</h2>
+<p><strong>Predictors:</strong> Not Graduated, HDI, Homeless Ratio</p>
+<section id="model-fit-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="model-fit-statistics">Model Fit Statistics</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Number of observations</td>
+<td>51</td>
+</tr>
+<tr class="even">
+<td>R-squared</td>
+<td>0.135</td>
+</tr>
+<tr class="odd">
+<td>Adjusted R-squared</td>
+<td>0.080</td>
+</tr>
+<tr class="even">
+<td>F-statistic</td>
+<td>2.446</td>
+</tr>
+<tr class="odd">
+<td>Prob (F-statistic)</td>
+<td>0.0755</td>
+</tr>
+<tr class="even">
+<td>Log-Likelihood</td>
+<td>-138.30</td>
+</tr>
+<tr class="odd">
+<td>AIC</td>
+<td>284.6</td>
+</tr>
+<tr class="even">
+<td>BIC</td>
+<td>292.3</td>
+</tr>
+<tr class="odd">
+<td>Durbin–Watson</td>
+<td>1.922</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="regression-coefficients" class="level3">
+<h3 class="anchored" data-anchor-id="regression-coefficients">Regression Coefficients</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 15%">
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 12%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Coefficient</th>
+<th>Std. Error</th>
+<th>t-statistic</th>
+<th>p-value</th>
+<th>95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td>-4.7427</td>
+<td>6.893</td>
+<td>-0.688</td>
+<td>0.495</td>
+<td>[-18.609, 9.124]</td>
+</tr>
+<tr class="even">
+<td>Not_graduated</td>
+<td>0.4467</td>
+<td>0.216</td>
+<td>2.065</td>
+<td><strong>0.044</strong></td>
+<td>[0.012, 0.882]</td>
+</tr>
+<tr class="odd">
+<td>HDI</td>
+<td>2.0516</td>
+<td>1.115</td>
+<td>1.840</td>
+<td>0.072</td>
+<td>[-0.191, 4.295]</td>
+</tr>
+<tr class="even">
+<td>Homeless_Ratio</td>
+<td>-0.0818</td>
+<td>0.039</td>
+<td>-2.086</td>
+<td><strong>0.042</strong></td>
+<td>[-0.161, -0.003]</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="model-diagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="model-diagnostics">Model Diagnostics</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Statistic</th>
+<th>p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Omnibus</td>
+<td>37.476</td>
+<td>0.000</td>
+</tr>
+<tr class="even">
+<td>Jarque–Bera</td>
+<td>108.202</td>
+<td>3.19e-24</td>
+</tr>
+<tr class="odd">
+<td>Skewness</td>
+<td>2.040</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>Kurtosis</td>
+<td>8.855</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>Condition Number</td>
+<td>337</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="discussion-next-steps" class="level2">
 <h2 class="anchored" data-anchor-id="discussion-next-steps">Discussion &amp; Next Steps</h2>
