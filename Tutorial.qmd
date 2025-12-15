@@ -5,7 +5,9 @@ jupyter: python3
 
 Here is how you use our package:
 
-This package has two different processes for getting the data. For simplicity purposes the first process is using an API key acquired from [OpenAQ](https://explore.openaq.org). Follow the link to follow the API functions to gather the most current and updated data for average air quality. The second process is a polished dataset that can be used for the analysis functions. 
+This package has two different processes for getting the data. The first process is a polished dataset that can be used for the analysis functions. The second process uses an API key acquired from [OpenAQ](https://explore.openaq.org). Follow the link to follow the API functions to gather the most current and updated data for average air quality. The first process is a polished dataset that can be used for the analysis functions. 
+
+**Note:** The functions that use the API require a large amount of processing time. The purpose of including these in the tutorial is to show the processes if recreation of the polished dataset is desired. 
 
 # The Dataset
 
@@ -24,7 +26,7 @@ data = US.USdata()
 
 ## Using API Functions
 
-It is important you follow the steps below in order to achieve the same dataset the USdata function outputs. 
+It is important you follow the steps below in order to achieve the same dataset the USdata function outputs. Warning!!! Processing time is large due to API limits.
 
 ### US Locations
 
